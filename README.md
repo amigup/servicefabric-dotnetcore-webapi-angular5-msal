@@ -93,3 +93,18 @@ Value | Meaning
 `consumers` |  users can sign in with a Microsoft Personal account
 a GUID or domain name | users can only sign in with an account for a specific organization described by its tenant ID (GUID) or domain name
  |
+ 
+#### Configure the WebAPI C# project
+
+1. Open the solution in Visual Studio.
+1. In the *SampleUserService* project, open the `appsettings.json` file.
+1. Find the `ClientId` property and replace the value with the Application ID (Client ID) property of the *regiseterd* application, that you registered earlier.
+1. [Optional] if you want to limit sign-in to users in your organization, also update the following
+- The `Domain` property, replacing the existing value with your AAD tenant domain, for example, contoso.onmicrosoft.com.
+- The `TenantId` property replacing the existing value with the Tenant ID.
+
+#### Configure the Angular project
+
+1. In the MSALAngularDemoApp project, open `environment.ts`.
+1. Find the app key `clientId` and replace the value with the ApplicationID (Client ID) for the *registered* app copied from the app registration page.
+1. Find the app key `scope` and replace the value with the scope of the registered application copied from the app registration (of the form ``api://<Application ID of service>/access_as_user``)
