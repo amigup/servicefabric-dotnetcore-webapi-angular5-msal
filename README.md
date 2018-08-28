@@ -92,7 +92,6 @@ Value | Meaning
 `organizations` |  users can sign in with any Work and School account
 `consumers` |  users can sign in with a Microsoft Personal account
 a GUID or domain name | users can only sign in with an account for a specific organization described by its tenant ID (GUID) or domain name
- |
  
 #### Configure the WebAPI C# project
 
