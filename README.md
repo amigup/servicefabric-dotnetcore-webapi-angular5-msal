@@ -156,13 +156,18 @@ Thumbprint                                Subject
 #### Configure the WebAPI C# project
 Clean the solution, rebuild the solution, and run it.  .
 
-Once the Web API is started, Navigate to ``https://localhost/``
+1. Once the Web API is started, Navigate to ``https://localhost/swagger/index.html``. 
+1. Click on Authorize. 
+1. Enter your credentials.
+1. Click on Try-out on API.
+1. Click on Execute
+![Swagger](./swagger_claims.png)
 
 #### Configure the Angular project
 1. Run ``npm install`` to intall all dependent packages
 1. Run ``ng serve`` for a dev server. Navigate to ``http://localhost:4200/``. The app will automatically reload if you change any of the source files.
 1. On launch, application will redirect to ``http://localhost:4200/userProfile`` after successful authentication and fetches the user name using graph API and user claims from the Web API. You can run the network monitoring tool like ``Browser developer tool`` or ``Fiddler``. 
-
+![Angular Appliation](./claims.png)
 ## More information
 
 For more information, visit the following links:
