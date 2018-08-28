@@ -1,5 +1,5 @@
 ---
-services: active-directory service-fabric
+services: active-directory
 platforms: service-fabric
 author: amigup
 client: angular5
