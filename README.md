@@ -8,7 +8,6 @@ author: amigup
 client: angular5
 service: ASP.NET Core 2.0
 endpoint: AAD V2
-
 ---
 
 ## About this sample
