@@ -1,6 +1,3 @@
-# servicefabric-dotnetcore-webapi-angular5-msal
-This sample demonstrates the use of MSAL for JavaScript for securing an Angular based single page app, implemented with an ASP.NET Web API backend hosted on Service Fabric.
-
 ---
 services: active-directory
 platforms: dotnet-core
@@ -9,6 +6,8 @@ client: angular5
 service: ASP.NET Core 2.0
 endpoint: AAD V2
 ---
+# servicefabric-dotnetcore-webapi-angular5-msal
+This sample demonstrates the use of MSAL for JavaScript for securing an Angular based single page app, implemented with an ASP.NET Web API backend hosted on Service Fabric.
 
 ## About this sample
 
