@@ -1,0 +1,23 @@
+
+<div id="userIdentifier">
+ Welcome {{userData?.displayName}} !!
+</div>
+
+<div id="userIdentifier">
+        <table class="table-hover claim-table">
+                <tr>
+                    <th class="claim-type claim-data claim-head">Claim Type</th>
+                    <th class="claim-data claim-head">Claim Value</th>
+                </tr>
+
+                <tr *ngFor="let item of userClaims"> 
+                    <td class="claim-type claim-data">{{item.claimType}}</td>
+                    <td class="claim-data">{{item.claimValue}}</td>
+                </tr>
+            </table> 
+</div>
+<br>
+<br>
+
+This page demonstrate the use of Microsoft Graph API.
+
