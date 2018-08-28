@@ -1,9 +1,9 @@
 ---
-services: active-directory
-platforms: dotnet-core
+services: active-directory service-fabric
+platforms: service-fabric
 author: amigup
 client: angular5
-service: ASP.NET Core 2.0
+service: ASP.NET Core 2.0 Web API
 endpoint: AAD V2
 ---
 # servicefabric-dotnetcore-webapi-angular5-msal
