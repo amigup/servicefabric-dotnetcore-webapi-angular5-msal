@@ -97,12 +97,7 @@ a GUID or domain name | users can only sign in with an account for a specific or
 
 1. Open the solution in Visual Studio.
 1. In the *SampleUserService* project, open the `appsettings.json` file.
-1. Find the `ClientId` property and replace the value with the Application ID (Client ID) property of the *regiseterd* application, that you registered earlier.
-1. [Optional] if you want to limit sign-in to users in your organization, also update the following
-- The `Domain` property, replacing the existing value with your AAD tenant domain, for example, contoso.onmicrosoft.com.
-- The `TenantId` property replacing the existing value with the Tenant ID.
 1. You can use a self-signed certificate on your local machine and test clusters but you want to make sure to purchase a CA-signed one for your production clusters.  Find the `HttpsCertificateThumbprint` property and replace with obtatined certificate thumbprint .The Service Fabric SDK provides the CertSetup.ps1 script, which creates a self-signed certificate and imports it into the Cert:\LocalMachine\My certificate store. Open a command prompt as administrator and run the following command to create a cert with the subject "CN=localhost":
-
 ```Shell
 PS C:\program files\microsoft sdks\service fabric\clustersetup\secure> .\CertSetup.ps1 -Install -CertSubjectName CN=localhost
 ```
@@ -118,6 +113,10 @@ Thumbprint                                Subject
 ----------                                -------
 3B138D84C077C292579BA35E4410634E164075CD  CN=zwin7fh14scd.westus.cloudapp.azure.com
 ```
+1. Find the `ClientId` property and replace the value with the Application ID (Client ID) property of the *regiseterd* application, that you registered earlier.
+1. [Optional] if you want to limit sign-in to users in your organization, also update the following
+- The `Domain` property, replacing the existing value with your AAD tenant domain, for example, contoso.onmicrosoft.com.
+- The `TenantId` property replacing the existing value with the Tenant ID.
 
 #### Configure the Angular project
 
