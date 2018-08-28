@@ -123,3 +123,14 @@ Thumbprint                                Subject
 1. In the MSALAngularDemoApp project, open `environment.ts`.
 1. Find the app key `clientId` and replace the value with the ApplicationID (Client ID) for the *registered* app copied from the app registration page.
 1. Find the app key `scope` and replace the value with the scope of the registered application copied from the app registration (of the form ``api://<Application ID of service>/access_as_user``)
+
+### Step 4: Run the sample
+
+#### Configure the WebAPI C# project
+Clean the solution, rebuild the solution, and run it.  .
+
+Once the Web API is started, Navigate to ``https://localhost/``
+
+#### Configure the Angular project
+1. Run ``npm install`` to intall all dependent packages
+1. Run ``ng serve`` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
