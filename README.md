@@ -74,6 +74,21 @@ Sign in to [application registration portal](apps.dev.microsoft.com/). From ther
 1. Copy the scope proposed by default to access your web api as a user. It's in the form ``api://<Application ID>/access_as_user``
 1. Press the **Save** button at the bottom of the page.
 
+### Step 2.1:  Register the application with your Azure Active Directory tenant to enable Swagger on WebApi project
+
+#### Navigate to the Application registration portal
+
+Sign in to [application registration portal](apps.dev.microsoft.com/). From there, you can add converged applications.
+
+#### Register the angular app
+
+1. In the [application registration portal](apps.dev.microsoft.com), click **Add an app**
+1. In the *Register your application* page, provide a name for your application for instance like `servicefabric-dotnetcore-webapi-angular5-msal`
+1. Press the **Create** button
+1. In the registration page for your application, copy the *application ID* to the clipboard you will need it to configure the code for your application
+1. Press the **Save** button at the bottom of the page.
+
+
 ### Step 3:  Configure the sample to use your Azure AD tenant
 
 #### Choose which users account to sign in
@@ -117,6 +132,8 @@ Thumbprint                                Subject
 - The `Domain` property, replacing the existing value with your AAD tenant domain, for example, contoso.onmicrosoft.com.
 - The `TenantId` property replacing the existing value with the Tenant ID.
 
+#### Configure the Swagger on WebAPI C# project
+
 #### Configure the Angular project
 
 1. In the MSALAngularDemoApp project, open `environment.ts`.
@@ -132,7 +149,8 @@ Once the Web API is started, Navigate to ``https://localhost/``
 
 #### Configure the Angular project
 1. Run ``npm install`` to intall all dependent packages
-1. Run ``ng serve`` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+1. Run ``ng serve`` for a dev server. Navigate to ``http://localhost:4200/``. The app will automatically reload if you change any of the source files.
+1. On launch, application will redirect to ``http://localhost:4200/userProfile`` after successful authentication and fetches the user name using graph API and user claims from the Web API. You can run the network monitoring tool like ``Browser developer tool`` or ``Fiddler``. 
 
 ## More information
 
