@@ -72,6 +72,8 @@ Sign in to [application registration portal](apps.dev.microsoft.com/). From ther
 1. In the *Platforms* section, click on the **Add Platform** button and then on **Web API**
 1. Copy the scope proposed by default to access your web api as a user. It's in the form ``api://<Application ID>/access_as_user``
 1. Press the **Save** button at the bottom of the page.
+1. Click on **Edit Application Manifest** and set the ``oauth2AllowImplicitFlow`` to true.
+1. Press the **Save** button at the bottom of the page.
 
 ### Step 2.1:  Register the application with your Azure Active Directory tenant to enable Swagger on WebApi project
 
@@ -82,11 +84,15 @@ Sign in to [application registration portal](apps.dev.microsoft.com/). From ther
 #### Register the angular app
 
 1. In the [application registration portal](apps.dev.microsoft.com), click **Add an app**
-1. In the *Register your application* page, provide a name for your application for instance like `servicefabric-dotnetcore-webapi-angular5-msal`
+1. In the *Register your application* page, provide a name for your application for instance like `swagger-servicefabric-dotnetcore-webapi-angular5-msal`
 1. Press the **Create** button
 1. In the registration page for your application, copy the *application ID* to the clipboard you will need it to configure the code for your application
 1. Press the **Save** button at the bottom of the page.
-
+1. Open the registed application created in Step#2.
+1. In the *Web API platform*, in the *Pre-authorized applications* section click on **Add application**
+1. In the *application ID* field, paste the application ID of the `swagger-servicefabric-dotnetcore-webapi-angular5-msal` application as pasted from the registration
+1. In the *Scope* field, click on the **Select** combo box and select the scope for this Web API `api://<Application ID>/access_as_user`
+1. Press the **Save** button at the bottom of the page.
 
 ### Step 3:  Configure the sample to use your Azure AD tenant
 
@@ -110,6 +116,10 @@ a GUID or domain name | users can only sign in with an account for a specific or
 
 1. Open the solution in Visual Studio.
 1. In the *SampleUserService* project, open the `appsettings.json` file.
+1. Find the `ClientId` property and replace the value with the Application ID (Client ID) property of the *regiseterd* application, that you registered earlier.
+1. [Optional] if you want to limit sign-in to users in your organization, also update the following
+ The `Domain` property, replacing the existing value with your AAD tenant domain, for example, contoso.onmicrosoft.com.
+ The `TenantId` property replacing the existing value with the Tenant ID.
 1. You can use a self-signed certificate on your local machine and test clusters but you want to make sure to purchase a CA-signed one for your production clusters.  Find the `HttpsCertificateThumbprint` property and replace with obtatined certificate thumbprint .The Service Fabric SDK provides the CertSetup.ps1 script, which creates a self-signed certificate and imports it into the Cert:\LocalMachine\My certificate store. Open a command prompt as administrator and run the following command to create a cert with the subject "CN=localhost":
 ```Shell
 PS C:\program files\microsoft sdks\service fabric\clustersetup\secure> .\CertSetup.ps1 -Install -CertSubjectName CN=localhost
@@ -126,12 +136,14 @@ Thumbprint                                Subject
 ----------                                -------
 3B138D84C077C292579BA35E4410634E164075CD  CN=zwin7fh14scd.westus.cloudapp.azure.com
 ```
-1. Find the `ClientId` property and replace the value with the Application ID (Client ID) property of the *regiseterd* application, that you registered earlier.
-1. [Optional] if you want to limit sign-in to users in your organization, also update the following
-- The `Domain` property, replacing the existing value with your AAD tenant domain, for example, contoso.onmicrosoft.com.
-- The `TenantId` property replacing the existing value with the Tenant ID.
 
-#### Configure the Swagger on WebAPI C# project
+##### Configure the Swagger on WebAPI C# project
+1. In the *SampleUserService* project, open the `appsettings.json` file.
+1. Find the `Swagger:ClientId` property and replace the value with the Application ID (Client ID) property of the *regiseterd* swagger application, that you registered earlier.
+1. Find the `Swagger:ClientSecret` property and replace with the value with the generated secret.
+1. Find the `Swagger:Relam` property and replace with ``https://<<application server address>>/swagger/ui/o2c-html``.
+1. Find the `Swagger:AppName` property and replace with the value name used while registering swagger application.
+1. Find the `Swagger:Audience` property and replace with appliation ``api://<<Client Id of Web API application>>``.
 
 #### Configure the Angular project
 
