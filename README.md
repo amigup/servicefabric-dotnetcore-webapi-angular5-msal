@@ -79,7 +79,6 @@ Sign in to [application registration portal](apps.dev.microsoft.com/). From ther
 #### Choose which users account to sign in
 
 By default the sample is configured to enable users to sign in with any work and school accounts (AAD) or Microsoft Personal accounts (formerly live account).
-This is because `ida:Tenant` has the value of `common`.
 
 ##### Important note
 
