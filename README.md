@@ -18,7 +18,7 @@ or Microsoft personal accounts (formerly live account) to use your Web API.
 
 ### Overview
 
-This sample presents a Web API running on ASP.NET Core 2.0 using Azure service fabric, protected by Azure AD JWT Bearer Authentication. The Web API is exercised by a angluar5 clietn application.
+This sample presents a Web API running on ASP.NET Core 2.0 using Azure service fabric, protected by Azure AD JWT Bearer Authentication. The Web API is exercised by a angluar5 client application.
 The .Net application uses the Active Directory Authentication Library [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) to obtain a JWT access token through the [OAuth 2.0](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-oauth-code) protocol. The access token is sent to the ASP.NET Core Web API, which authenticates the user using the ASP.NET JWT Bearer Authentication middleware.
 
 Service Fabric with .NET Core
